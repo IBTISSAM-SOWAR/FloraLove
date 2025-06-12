@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Flora Love</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+</head>
+<body style="background-color: #f9f4ed;">
+   <section id="header">
+		<div>
+			<img width="170" src="img/log.png" class="logo" alt="Logo">
+		</div>
+		<div>
+			<ul id="navbar">
+				<li><a  href="index.html">Home</a></li>
+				<li><a class="active" href="shop.html">Shop</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+				<a href="#" id="close"><i class="far fa-times"></i></a>
+			</ul>
+		</div>
+		<div class="mobile">
+			<a href="cart.html"><i class="fas fa-shopping-bag"></i></a> 
+			<i id="bar" class="fas fa-outdent"></i>
+		</div>
+	</section>
+
+ 
+
+  <!-- Hero Banner -->
+  <section class="text-center py-1 " id="banner1">
+   <h4>Repair Services</h4>
+	<h2>Up to <span>70% off</span> - All flowers </h2>
+  </section>
+
+  <!-- Filters -->
+  <!-- <section class="max-w-7xl mx-auto px-4 py-8">
+    <div class="flex flex-wrap justify-center gap-4">
+      <button class="px-5 py-2 bg-white border border-gray-200 rounded-full shadow hover:bg-pink-100 text-sm font-medium flex items-center gap-2">
+        <span class="w-3 h-3 bg-red-500 rounded-full"></span> Same-Day Delivery
+      </button>
+      <button class="px-5 py-2 bg-white border border-gray-200 rounded-full shadow hover:bg-pink-100 text-sm font-medium flex items-center gap-2">
+        <span class="w-3 h-3 bg-blue-500 rounded-full"></span> Nationwide Shipping
+      </button>
+      <button class="px-5 py-2 bg-white border border-gray-200 rounded-full shadow hover:bg-pink-100 text-sm font-medium flex items-center gap-2">
+        <span class="w-3 h-3 bg-green-500 rounded-full"></span> Plants
+      </button>
+      <button class="px-5 py-2 bg-white border border-gray-200 rounded-full shadow hover:bg-pink-100 text-sm font-medium flex items-center gap-2">
+        <span class="w-3 h-3 bg-yellow-500 rounded-full"></span> Chocolates
+      </button>
+    </div>
+  </section> -->
+
+  <!-- Main Section --><hr style="color:black ;
+height: 20px; width: 100%; margin-top: 49px;">
+  <section class="max-w-7xl mx-auto py-25 px-4 flex flex-col lg:flex-row gap-8 pb-16">
+    <!-- Sidebar -->
+    <aside class="lg:w-1/4 bg-white rounded-xl shadow p-6">
+      <h2 class="text-xl font-semibold mb-4">Categories</h2>
+      <ul class="space-y-3">
+        <li><label class="flex items-center gap-2"><input type="checkbox" class="accent-pink-500" /> Birthday Bouquets</label></li>
+        <li><label class="flex items-center gap-2"><input type="checkbox" class="accent-pink-500" /> Gift Sets</label></li>
+        <li><label class="flex items-center gap-2"><input type="checkbox" class="accent-pink-500" /> Fresh Roses</label></li>
+      </ul>
+      <h2 class="text-xl font-semibold mt-8 mb-4">Price Range</h2>
+      <ul class="space-y-3">
+        <li><label class="flex items-center gap-2"><input type="radio" name="price" class="accent-pink-500" /> Under $50</label></li>
+        <li><label class="flex items-center gap-2"><input type="radio" name="price" class="accent-pink-500" /> $50 - $100</label></li>
+        <li><label class="flex items-center gap-2"><input type="radio" name="price" class="accent-pink-500" /> Above $100</label></li>
+      </ul>
+    </aside>
+
+    <!-- Products Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 flex-1">
+      <!-- Sample Product Card -->
+     <div class="pro">
+				<img src="img/01fc35e4-e7b6-4b9e-b24d-d96315d1c3f0.jpg" alt="Product">
+				<div class="des">
+					<span>Flower</span>
+					<h5>Elegant Red Rose</h5>
+					<div class="star">
+						<i class="fas fa-star"></i><i class="fas fa-star"></i>
+						<i class="fas fa-star"></i><i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+					<h4>$63</h4>
+				</div>
+				<a href="#" class="fas fa-shopping-cart"></a>
+        </div>
+     
+      <!-- Copy and paste above block for more products -->
+       <div class="pro">
+				<img src="img/02af2e58-e87b-4911-a1b8-631e2074d059.jpg" alt="Product">
+				<div class="des">
+					<span>Flower</span>
+					<h5>Elegant Red Rose</h5>
+					<div class="star">
+						<i class="fas fa-star"></i><i class="fas fa-star"></i>
+						<i class="fas fa-star"></i><i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+					<h4>$63</h4>
+				</div>
+				<a href="#" class="fas fa-shopping-cart"></a>
+			</div>
+			<div class="pro">
+				<img src="img/0b412461-d513-4ef6-9c27-a5d43253287c.jpg" alt="Product">
+				<div class="des">
+					<span>Flower</span>
+					<h5>Elegant Red Rose</h5>
+					<div class="star">
+						<i class="fas fa-star"></i><i class="fas fa-star"></i>
+						<i class="fas fa-star"></i><i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+					<h4>$63</h4>
+				</div>
+				<a href="#" class="fas fa-shopping-cart"></a>
+			</div>
+			<div class="pro">
+				<img src="img/609ad5ab-85e8-498c-a1f3-8fd5a139c596.jpg" alt="Product">
+				<div class="des">
+					<span>Flower</span>
+					<h5>Elegant Red Rose</h5>
+					<div class="star">
+						<i class="fas fa-star"></i><i class="fas fa-star"></i>
+						<i class="fas fa-star"></i><i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+					<h4>$63</h4>
+				</div>
+				<a href="#" class="fas fa-shopping-cart"></a>
+			</div>
+			<div class="pro">
+				<img src="img/8bc0ca87-79d2-4e52-8962-13be5c3c6e58.jpg" alt="Product">
+				<div class="des">
+					<span>Flower</span>
+					<h5>Elegant Red Rose</h5>
+					<div class="star">
+						<i class="fas fa-star"></i><i class="fas fa-star"></i>
+						<i class="fas fa-star"></i><i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+					<h4>$63</h4>
+				</div>
+				<a href="#" class="fas fa-shopping-cart"></a>
+			</div>
+			<div class="pro">
+				<img src="img/bc8a4adc-154b-4c3e-af1f-d4ba287f1061.jpg" alt="Product">
+				<div class="des">
+					<span>Flower</span>
+					<h5>Elegant Red Rose</h5>
+					<div class="star">
+						<i class="fas fa-star"></i><i class="fas fa-star"></i>
+						<i class="fas fa-star"></i><i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+					<h4>$63</h4>
+				</div>
+				<a href="#" class="fas fa-shopping-cart"></a>
+			</div>
+			<div class="pro">
+				<img src="img/5714c715-480c-4586-b731-c3ceee1580a5.jpg" alt="Product">
+				<div class="des">
+					<span>Flower</span>
+					<h5>Elegant Red Rose</h5>
+					<div class="star">
+						<i class="fas fa-star"></i><i class="fas fa-star"></i>
+						<i class="fas fa-star"></i><i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+					<h4>$63</h4>
+				</div>
+				<a href="#" class="fas fa-shopping-cart"></a>
+			</div>
+   
+        </div>
+     </div>
+  </section>
+  <section id="pagination">
+       
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href=""><i class="fal fa-long-arrow-alt-right"></i></a>
+    
+  </section>
+
+<div class="extra">
+		<div class="tex" style="padding-top: 20px;">
+			<h4>Can you connect with us? See in email</h4>
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+				<span style="color: #fff;"><br>Magni veritatis ducimus eius, expedita</span>
+			</p>
+		</div>
+		<div class="but">
+			<input type="email" placeholder="Enter your email">
+			<button>Submit</button>
+		</div>
+	</div>
+  <footer class="section-p1" >
+		
+		<div class="col">
+			<h4>Contact</h4>
+			<p><strong>Phone:</p>+32 234 4232</strong>
+			<p><strong>Phone:</p>+32 234 4232</strong>
+			<p><strong>Phone:</p>+32 234 4232</strong>
+			<div class="follow">
+				<h4>Follow Us</h4>
+				<div class="icon">
+					<i class="fab fa-facebook"></i>
+					<i class="fab fa-instagram"></i>
+					<i class="fab fa-tiktok"></i>
+					<i class="fab fa-facebook-p"></i>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col">
+			<h4>About</h4>
+			<a href="#">About us</a>
+			<a href="#">Delivery information</a>
+			<a href="#">Privacy policy</a>
+			<a href="#">Terms</a>
+			<a href="#">Contact us</a>
+		</div>
+
+		<div class="col">
+			<h4>MyAccount</h4>
+			<a href="#">About us</a>
+			<a href="#">Delivery information</a>
+			<a href="#">Privacy policy</a>
+			<a href="#">Terms</a>
+			<a href="#">Contact us</a>
+		</div>
+
+		<div class="col install">
+			<h4>Install App</h4>
+			<p>Form App Store or Google Play</p>
+			<div class="row">
+				<img src="img/app.jpg"" alt="">
+				<img src="img/play.jpg"" alt="">
+			</div>
+			<p>Secured  Payment Gateways</p>
+			<img src="img/pay.png" alt="">
+		</div>
+	</footer>
+</body>
+</html>
