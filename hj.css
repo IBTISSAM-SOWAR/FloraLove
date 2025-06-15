@@ -2,10 +2,16 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 * {
+	padding: 0;
+	margin: 0;
 	box-sizing: border-box;
 }
+body{
+	background: #f9f4ed;
 
-body {
+}
+
+.container {
 	background: #f9f4ed;;
 	display: flex;
 	justify-content: center;
@@ -25,12 +31,13 @@ h2 {
 	text-align: center;
 }
 
-p {
+.overlay-container p {
 	font-size: 14px;
 	font-weight: 100;
 	line-height: 20px;
 	letter-spacing: 0.5px;
 	margin: 20px 0 30px;
+	color:#FFFFFF ;
 }
 
 span {
@@ -89,7 +96,7 @@ input {
 	width: 100%;
 }
 
-.container {
+.container2 {
 	background-color: #fff;
 	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
@@ -145,6 +152,7 @@ input {
 }
 
 .overlay-container {
+
 	position: absolute;
 	top: 0;
 	left: 50%;
@@ -162,7 +170,7 @@ input {
 .overlay {
 	/* background: #FF416C; */
 	/* background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C); */
-	background: linear-gradient(to right,  #e3bc78,  #c89a4b);
+	background-color:#c89a4b;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;

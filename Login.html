@@ -6,6 +6,7 @@
   <title> Flora Love</title>
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   <link rel="stylesheet" href="hj.css" />
+  <link rel="stylesheet" href="style.css">
   <!-- <link rel="stylesheet" href="style.css"> -->
   <link
     rel="stylesheet"
@@ -13,8 +14,29 @@
   />
 </head>
 <body>
-    
-<div class="container" id="container">
+      <section id="header">
+		<div>
+			<img width="170" src="img/log.png" class="logo" alt="Logo">
+		</div>
+		<div>
+			<ul id="navbar">
+				<li><a  href="index.html">Home</a></li>
+				<li><a class="active" href="shop.html">Shop</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="Car.html"><i class="fas fa-shopping-bag"></i></a></li>
+				<a href="#" id="close"><i class="far fa-times"></i></a>
+			</ul>
+		</div>
+		<div class="mobile">
+			<a href="car.html"><i class="fas fa-shopping-bag"></i></a> 
+			<i id="bar" class="fas fa-outdent"></i>
+		</div>
+	</section>
+
+	<section class="container" id="container">
+
+<div class="container2">
 	<div class="form-container sign-up-container">
 		<form action="#">
 			<h1>Create Account</h1>
@@ -48,18 +70,21 @@
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
+				<img src="img/logoo.png" width="170" alt="">
 				<h1>Welcome Back!</h1>
 				<p>To keep connected with us please login with your personal info</p>
 				<button class="ghost" id="signIn">Sign In</button>
 			</div>
 			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
+					<img src="img/logoo.png" width="170" alt="">
+				<h1>Hello Friend!</h1>
 				<p>Enter your personal details and start journey with us</p>
 				<button class="ghost" id="signUp">Sign Up</button>
 			</div>
 		</div>
 	</div>
 </div>
+</section>
 </section>
 <script src="script.js"></script>
 </body>

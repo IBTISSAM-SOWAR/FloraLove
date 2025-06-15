@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary: #9aab87;
+            --text: #252202;
+        
+            --card-bg: #ffffff;
+            --border: #c89a4b;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9f4ed;
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .gallery {
+            position: relative;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            background: var(--card-bg);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            overflow: hidden;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .thumbnail.active {
+            opacity: 1;
+            border: 2px solid var(--primary);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .price {
+            font-size: 1.8em;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .description {
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .add-to-cart {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background:#252202;
+            transform: translateY(-2px);
+        }
+
+        .payment-methods {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .payment-methods img {
+            height: 30px;
+            opacity: 0.7;
+        }
+
+        .related-products {
+            margin-top: 50px;
+        }
+
+        .related-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .related-item {
+            background: var(--card-bg);
+           
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .related-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+          
+            margin-bottom: 10px;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-image {
+                height: 300px;
+            }
+              .xtra {
+        margin-top: 0px;
+        text-align: start;
+          }
+
+      .tex {
+        padding: 0px;
+      }
+
+      .but {
+        padding: 0px;
+      }
+        }
+    .xtra {
+      margin-top: 90px;
+    }
+
+    .tex {
+      padding: 30px 90px;
+    }
+
+    .but {
+      padding: 0 95px;
+    }
+        
+    </style>
+</head>
+<body>
+   <section id="header">
+		<div>
+			<img width="170" src="img/log.png" class="logo" alt="Logo">
+		</div>
+		<div>
+			<ul id="navbar">
+				<li><a  href="index.html">Home</a></li>
+				<li><a class="active" href="shop.html">Shop</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+				<a href="#" id="close"><i class="far fa-times"></i></a>
+			</ul>
+		</div>
+		<div class="mobile">
+			<a href="cart.html"><i class="fas fa-shopping-bag"></i></a> 
+			<i id="bar" class="fas fa-outdent"></i>
+		</div>
+	</section>
+    <div class="container">
+        <div class="product-container">
+            <div class="gallery">
+                <div class="main-image">
+                    <img src="img/0b412461-d513-4ef6-9c27-a5d43253287c.jpg" alt="Product">
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail active">
+                        <img src="img/248261b5-c20a-44eb-8b6a-ac40485be91e.jpg" alt="Thumbnail 1">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="img/248261b5-c20a-44eb-8b6a-ac40485be91e.jpg" alt="Thumbnail 2">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="img/7f972077-9940-4bad-b12c-b6a708d6b923.png" alt="Thumbnail 3">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="img/5874796-removebg-preview.png" alt="Thumbnail 4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1 class="product-title">Premium Product</h1>
+                <div class="price">$288.00</div>
+                <p class="description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                </p>
+                <button class="add-to-cart" onclick="window.location.href='Car.html'">Add to Cart</button>
+                <div class="payment-methods">
+                    <img src="img/pay.png" alt="Visa">
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="related-products">
+            <h2 class="related-title">Related Products</h2>
+            <div class="related-grid">
+                <div class="related-item">
+                    <img src="img/05c1905d-05a9-4871-82a8-602e8d3de0bb.png" alt="Related 1">
+                    <h3>Product 1</h3>
+                    <p>$199.00</p>
+                </div>
+                <div class="related-item">
+                    <img src="img/01fc35e4-e7b6-4b9e-b24d-d96315d1c3f0.jpg"Related 2">
+                    <h3>Product 2</h3>
+                    <p>$249.00</p>
+                </div>
+                <div class="related-item">
+                    <img src="img/02af2e58-e87b-4911-a1b8-631e2074d059.jpg" alt="Related 3">
+                    <h3>Product 3</h3>
+                    <p>$299.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+	<div class="extra" style="margin-top: 90px;">
+		<div class="tex" style="padding:30px 90px;">
+			<h4>Can you connect with us? See in email</h4>
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+				<span style="color: #fff;"><br>Magni veritatis ducimus eius, expedita</span>
+			</p>
+		</div>
+		<div class="but" style="padding: 0 95px;">
+			<input type="email" placeholder="Enter your email">
+			<button>Submit</button>
+		</div>
+	</div>
+    <footer class="section-p1" >
+		<img class="logo" width="120" height="80" src="img/logox.png" alt=""><br>
+		<div class="col">
+			<h4>Contact</h4>
+			<p><strong>Phone:</p>+32 234 4232</strong>
+			<p><strong>Phone:</p>+32 234 4232</strong>
+			<p><strong>Phone:</p>+32 234 4232</strong>
+			<div class="follow">
+				<h4>Follow Us</h4>
+				<div class="icon">
+					<i class="fab fa-facebook"></i>
+					<i class="fab fa-instagram"></i>
+					<i class="fab fa-tiktok"></i>
+					<i class="fab fa-facebook-p"></i>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col">
+			<h4>About</h4>
+			<a href="#">About us</a>
+			<a href="#">Delivery information</a>
+			<a href="#">Privacy policy</a>
+			<a href="#">Terms</a>
+			<a href="#">Contact us</a>
+		</div>
+
+		<div class="col">
+			<h4>MyAccount</h4>
+			<a href="#">About us</a>
+			<a href="#">Delivery information</a>
+			<a href="#">Privacy policy</a>
+			<a href="#">Terms</a>
+			<a href="#">Contact us</a>
+		</div>
+
+		<div class="col install">
+			<h4>Install App</h4>
+			<p>Form App Store or Google Play</p>
+			<div class="row">
+				<img src="img/app.jpg"" alt="">
+				<img src="img/play.jpg"" alt="">
+			</div>
+			<p>Secured  Payment Gateways</p>
+			<img src="img/pay.png" alt="">
+		</div>
+	</footer>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.querySelector('.theme-toggle i');
+            icon.classList.toggle('bx-moon');
+            icon.classList.toggle('bx-sun');
+        }
+
+        // Thumbnail Gallery
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.querySelector('.main-image img');
+
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                thumbnails.forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+                mainImage.src = thumb.querySelector('img').src;
+            });
+        });
+
+        // Add to Cart Animation
+        const addToCartBtn = document.querySelector('.add-to-cart');
+        addToCartBtn.addEventListener('click', () => {
+            addToCartBtn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                addToCartBtn.style.transform = 'scale(1)';
+            }, 200);
+        });
+    </script>
+</body>
+</html>

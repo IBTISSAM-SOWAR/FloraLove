@@ -10,8 +10,174 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
   />
+
+  <style>
+	.wrapper {
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center; }
+
+.inner {
+  min-width: 850px;
+  margin: auto;
+  padding-top: 68px;
+  padding-bottom: 48px;
+  background: url("img/pinterestdownloader.com-1749727676.650077.png");
+  background-repeat: no-repeat;
+  background-position: right 0;
+ }
+  .inner h3 {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-family: "Muli-Bold";
+    text-align: center;
+    margin-bottom: 32px;
+    color: #333;
+    letter-spacing: 2px; }
+
+form {
+  width: 50%;
+  padding-right: 55px;
+
+  padding-left: 20px; }
+
+.form-group {
+  display: flex; }
+  .form-group .form-wrapper {
+    width: 50%; }
+    .form-group .form-wrapper:first-child {
+      margin-right: 20px; }
+
+.form-wrapper {
+  margin-bottom: 17px; }
+  .form-wrapper label {
+    margin-bottom: 9px;
+    display: block; }
+
+.form-control {
+  border: 1px solid #ccc;
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 20px;
+  font-family: "Muli-Bold";
+  background: none; }
+  .form-control:focus {
+    border: 1px solid #ae3c33; }
+
+select {
+  cursor: pointer;
+  padding-left: 20px; }
+  select option[value=""][disabled] {
+    display: none; }
+
+button.j {
+  border: none;
+  width: 152px;
+  height: 40px;
+  margin: auto;
+  margin-top: 29px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #ae3c33;
+  font-size: 13px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Muli-SemiBold";
+  border-radius: 20px;
+  overflow: hidden;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s; }
+  button.j:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f11a09;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out; }
+  button.j:hover:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66); }
+
+.checkbox {
+  position: relative; }
+  .checkbox label {
+    padding-left: 22px;
+    cursor: pointer; }
+  .checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer; }
+  .checkbox input:checked ~ .checkmark:after {
+    display: block; }
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 12px;
+  width: 13px;
+  border-radius: 2px;
+  background-color: #ebebeb;
+  border: 1px solid #ccc;
+  font-family: Material-Design-Iconic-Font;
+  color: #000;
+  font-size: 10px;
+  font-weight: bolder; }
+  .checkmark:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    content: '\f26b'; }
+
+@media (max-width: 991px) {
+  .inner {
+    min-width: 768px; } }
+@media (max-width: 767px) {
+  .inner {
+    min-width: auto;
+    background: none;
+    padding-top: 0;
+    padding-bottom: 0; }
+
+  form {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px; } }
+
+/*# sourceMappingURL=style.css.map */
+  </style>
 </head>
-<body style="background-color: #f9f4ed;">
+<body class="font-['Montserrat']" style="background-color: #f9f4ed;">
    <section id="header">
 		<div>
 			<img width="170" src="img/log.png" class="logo" alt="Logo">
@@ -22,43 +188,21 @@
 				<li><a class="active" href="shop.html">Shop</a></li>
 				<li><a href="about.html">About</a></li>
 				<li><a href="contact.html">Contact</a></li>
-				<li><a href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+				<li><a href="Car.html"><i class="fas fa-shopping-bag"></i></a></li>
 				<a href="#" id="close"><i class="far fa-times"></i></a>
 			</ul>
 		</div>
 		<div class="mobile">
-			<a href="cart.html"><i class="fas fa-shopping-bag"></i></a> 
+			<a href="car.html"><i class="fas fa-shopping-bag"></i></a> 
 			<i id="bar" class="fas fa-outdent"></i>
 		</div>
 	</section>
 
- 
-
-  <!-- Hero Banner -->
   <section class="text-center py-1 " id="banner1">
-   <h4>Repair Services</h4>
-	<h2>Up to <span>70% off</span> - All flowers </h2>
+
   </section>
-
-  <!-- Filters -->
-  <!-- <section class="max-w-7xl mx-auto px-4 py-8">
-    <div class="flex flex-wrap justify-center gap-4">
-      <button class="px-5 py-2 bg-white border border-gray-200 rounded-full shadow hover:bg-pink-100 text-sm font-medium flex items-center gap-2">
-        <span class="w-3 h-3 bg-red-500 rounded-full"></span> Same-Day Delivery
-      </button>
-      <button class="px-5 py-2 bg-white border border-gray-200 rounded-full shadow hover:bg-pink-100 text-sm font-medium flex items-center gap-2">
-        <span class="w-3 h-3 bg-blue-500 rounded-full"></span> Nationwide Shipping
-      </button>
-      <button class="px-5 py-2 bg-white border border-gray-200 rounded-full shadow hover:bg-pink-100 text-sm font-medium flex items-center gap-2">
-        <span class="w-3 h-3 bg-green-500 rounded-full"></span> Plants
-      </button>
-      <button class="px-5 py-2 bg-white border border-gray-200 rounded-full shadow hover:bg-pink-100 text-sm font-medium flex items-center gap-2">
-        <span class="w-3 h-3 bg-yellow-500 rounded-full"></span> Chocolates
-      </button>
-    </div>
-  </section> -->
-
-  <!-- Main Section --><hr style="color:black ;
+   
+<hr style="color:black ;
 height: 20px; width: 100%; margin-top: 49px;">
   <section class="max-w-7xl mx-auto py-25 px-4 flex flex-col lg:flex-row gap-8 pb-16">
     <!-- Sidebar -->
@@ -80,7 +224,7 @@ height: 20px; width: 100%; margin-top: 49px;">
     <!-- Products Grid -->
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 flex-1">
       <!-- Sample Product Card -->
-     <div class="pro">
+     <div class="pro" onclick="window.location.href='desPage.html';" onclick="window.location.href='desPage.html';">
 				<img src="img/01fc35e4-e7b6-4b9e-b24d-d96315d1c3f0.jpg" alt="Product">
 				<div class="des">
 					<span>Flower</span>
@@ -91,12 +235,14 @@ height: 20px; width: 100%; margin-top: 49px;">
 						<i class="fas fa-star"></i>
 					</div>
 					<h4>$63</h4>
+					<button style="background-color:  #c89a4b; border-radius: 5px; padding: 7px;color: #fff;">Show Now</button>
 				</div>
 				<a href="#" class="fas fa-shopping-cart"></a>
+			
         </div>
      
       <!-- Copy and paste above block for more products -->
-       <div class="pro">
+       <div class="pro" onclick="window.location.href='desPage.html';">
 				<img src="img/02af2e58-e87b-4911-a1b8-631e2074d059.jpg" alt="Product">
 				<div class="des">
 					<span>Flower</span>
@@ -107,10 +253,11 @@ height: 20px; width: 100%; margin-top: 49px;">
 						<i class="fas fa-star"></i>
 					</div>
 					<h4>$63</h4>
+					<button style="background-color:  #c89a4b; border-radius: 5px; padding: 7px;color: #fff;">Show Now</button>
 				</div>
 				<a href="#" class="fas fa-shopping-cart"></a>
 			</div>
-			<div class="pro">
+			<div class="pro" onclick="window.location.href='desPage.html';">
 				<img src="img/0b412461-d513-4ef6-9c27-a5d43253287c.jpg" alt="Product">
 				<div class="des">
 					<span>Flower</span>
@@ -121,10 +268,11 @@ height: 20px; width: 100%; margin-top: 49px;">
 						<i class="fas fa-star"></i>
 					</div>
 					<h4>$63</h4>
+					<button style="border-radius: 5px; background-color:  #c89a4b; padding: 7px;color: #fff;">Show Now</button>
 				</div>
 				<a href="#" class="fas fa-shopping-cart"></a>
 			</div>
-			<div class="pro">
+			<div class="pro" onclick="window.location.href='desPage.html';">
 				<img src="img/609ad5ab-85e8-498c-a1f3-8fd5a139c596.jpg" alt="Product">
 				<div class="des">
 					<span>Flower</span>
@@ -135,10 +283,12 @@ height: 20px; width: 100%; margin-top: 49px;">
 						<i class="fas fa-star"></i>
 					</div>
 					<h4>$63</h4>
+					
+					<button style="border-radius: 5px; background-color:  #c89a4b; padding: 7px;color: #fff;">Show Now</button>
 				</div>
 				<a href="#" class="fas fa-shopping-cart"></a>
 			</div>
-			<div class="pro">
+			<div class="pro" onclick="window.location.href='desPage.html';">
 				<img src="img/8bc0ca87-79d2-4e52-8962-13be5c3c6e58.jpg" alt="Product">
 				<div class="des">
 					<span>Flower</span>
@@ -149,10 +299,11 @@ height: 20px; width: 100%; margin-top: 49px;">
 						<i class="fas fa-star"></i>
 					</div>
 					<h4>$63</h4>
+					<button style="border-radius: 5px;  background-color:  #c89a4b; padding: 7px;color: #fff;">Show Now</button>
 				</div>
 				<a href="#" class="fas fa-shopping-cart"></a>
 			</div>
-			<div class="pro">
+			<div class="pro" onclick="window.location.href='desPage.html';">
 				<img src="img/bc8a4adc-154b-4c3e-af1f-d4ba287f1061.jpg" alt="Product">
 				<div class="des">
 					<span>Flower</span>
@@ -163,10 +314,11 @@ height: 20px; width: 100%; margin-top: 49px;">
 						<i class="fas fa-star"></i>
 					</div>
 					<h4>$63</h4>
+					<button style="border-radius: 5px; background-color:  #c89a4b; padding: 7px;color: #fff;">Show Now</button>
 				</div>
 				<a href="#" class="fas fa-shopping-cart"></a>
 			</div>
-			<div class="pro">
+			<div class="pro" onclick="window.location.href='desPage.html';">
 				<img src="img/5714c715-480c-4586-b731-c3ceee1580a5.jpg" alt="Product">
 				<div class="des">
 					<span>Flower</span>
@@ -177,6 +329,7 @@ height: 20px; width: 100%; margin-top: 49px;">
 						<i class="fas fa-star"></i>
 					</div>
 					<h4>$63</h4>
+					<button style="border-radius: 5px; background-color:  #c89a4b; padding: 7px;color: #fff;">Show Now</button>
 				</div>
 				<a href="#" class="fas fa-shopping-cart"></a>
 			</div>
@@ -184,13 +337,20 @@ height: 20px; width: 100%; margin-top: 49px;">
         </div>
      </div>
   </section>
-  <section id="pagination">
-       
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href=""><i class="fal fa-long-arrow-alt-right"></i></a>
-    
-  </section>
+  <!-- ----------------------------------------------------------------- -->
+ <section id="pagination">
+  <a href="#">1</a>
+  <a href="#">2</a>
+  <a href="#">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" 
+         viewBox="0 0 24 24" stroke-width="1.5" 
+         stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round"
+            d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+    </svg>
+  </a>
+</section>
+
 
 <div class="extra">
 		<div class="tex" style="padding-top: 20px;">

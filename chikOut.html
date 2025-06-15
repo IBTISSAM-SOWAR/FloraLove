@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+           transition: all 0.3s ease;
+          
+        }
+
+        :root {
+            --primary-bg: #f9f4ed;
+            /* --text-color: #281f15; */
+            --text-color: #475436;
+            --shadow-dark: rgba(95, 80, 63, 0.2);
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            
+        }
+        body{ background-color: #f9f4ed;}
+
+      
+
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            position: relative;
+        
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            /* background: var(--primary-bg); */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+        }
+
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--text-color);
+            opacity: 0.2;
+        }
+
+        .form-section {
+            margin-top: 90px;
+            border-radius: 15px;
+            padding: 2rem;
+             box-shadow:10px 0 40px rgba(0, 0, 0, 0.185) ;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--shadow-light);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            /* background: var(--primary-bg); */
+            border-radius: 8px;
+            box-shadow: inset 4px 4px 8px var(--shadow-light),
+                        inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+            color: var(--text-color);
+        }
+
+        .form-input:focus {
+            outline: none;
+            box-shadow: inset 6px 6px 12px var(--shadow-light),
+                        inset -6px -6px 12px rgba(255, 255, 255, 0.9);
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-method {
+            padding: 1rem;
+            border-radius: 8px;
+            /* background: var(--primary-bg); */
+            box-shadow: 4px 4px 8px var(--shadow-light),
+                        -4px -4px 8px rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .payment-method:hover {
+            transform: translateY(-3px);
+        }
+
+        .payment-method.active {
+            box-shadow: inset 4px 4px 8px var(--shadow-light),
+                        inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+        }
+
+        .order-summary {
+            /* background: var(--primary-bg); */
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 8px 8px 15px var(--shadow-light),
+                        -8px -8px 15px rgba(255, 255, 255, 0.9);
+            height: fit-content;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--shadow-light);
+        }
+
+        .total-amount {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--shadow-light);
+        }
+
+        .place-order-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--text-color);
+            color: var(--primary-bg);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .place-order-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .input-row {
+                grid-template-columns: 1fr;
+            }
+
+            .progress-bar {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="header">
+		<div>
+			<img width="170" src="img/log.png" class="logo" alt="Logo">
+		</div>
+		<div>
+			<ul id="navbar">
+				<li><a  href="index.html">Home</a></li>
+				<li><a  href="shop.html">Shop</a></li>
+				<li><a class="active" href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="car.html"><i class="fas fa-shopping-bag"></i></a></li>
+				<a href="#" id="close"><i class="far fa-times"></i></a>
+			</ul>
+		</div>
+		<div class="mobile">
+			<a href="cart.html"><i class="fas fa-shopping-bag"></i></a> 
+			<i id="bar" class="fas fa-outdent"></i>
+		</div>
+	</section>
+
+    <div class="container">
+
+        <main class="checkout-main">
+            <section class="form-section">
+                <h2 class="section-title">Shipping Information</h2>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Address</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label class="form-label">City</label>
+                            <input type="text" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Postal Code</label>
+                            <input type="text" class="form-input" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" class="form-input" required>
+                    </div>
+                </form>
+            </section>
+
+            <section class="form-section">
+                <h2 class="section-title">Payment Method</h2>
+                <div class="payment-methods">
+                    <div class="payment-method active">
+                        <i class="fas fa-credit-card"></i>
+                        <p>Credit Card</p>
+                    </div>
+                    <div class="payment-method">
+                        <i class="fab fa-paypal"></i>
+                        <p>PayPal</p>
+                    </div>
+                    <div class="payment-method">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <p>Cash</p>
+                    </div>
+                </div>
+
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label class="form-label">Card Number</label>
+                        <input type="text" class="form-input" placeholder="1234 5678 9012 3456" required>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label class="form-label">Expiry Date</label>
+                            <input type="text" class="form-input" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">CVV</label>
+                            <input type="text" class="form-input" placeholder="123" required>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <aside class="order-summary">
+            <h2 class="section-title">Order Summary</h2>
+            <div class="summary-item">
+                <span>Products (3)</span>
+                <span>$449.97</span>
+            </div>
+            <div class="summary-item">
+                <span>Shipping</span>
+                <span>$9.99</span>
+            </div>
+            <div class="summary-item">
+                <span>Tax</span>
+                <span>$45.00</span>
+            </div>
+            <div class="summary-item total-amount">
+                <span>Total</span>
+                <span>$504.96</span>
+            </div>
+            <button onclick="window.location.href='order.html'" class="place-order-btn">Place Order</button>
+        </aside>
+    </div>
+
+    
+<div class="extra">
+		<div class="tex" style="padding-top: 20px;">
+			<h4>Can you connect with us? See in email</h4>
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+				<span style="color: #fff;"><br>Magni veritatis ducimus eius, expedita</span>
+			</p>
+		</div>
+		<div class="but">
+			<input type="email" placeholder="Enter your email">
+			<button>Submit</button>
+		</div>
+	</div>
+  <footer class="section-p1" >
+		
+		<div class="col">
+			<h4>Contact</h4>
+			<p><strong>Phone:</p>+32 234 4232</strong>
+			<p><strong>Phone:</p>+32 234 4232</strong>
+			<p><strong>Phone:</p>+32 234 4232</strong>
+			<div class="follow">
+				<h4>Follow Us</h4>
+				<div class="icon">
+					<i class="fab fa-facebook"></i>
+					<i class="fab fa-instagram"></i>
+					<i class="fab fa-tiktok"></i>
+					<i class="fab fa-facebook-p"></i>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col">
+			<h4>About</h4>
+			<a href="#">About us</a>
+			<a href="#">Delivery information</a>
+			<a href="#">Privacy policy</a>
+			<a href="#">Terms</a>
+			<a href="#">Contact us</a>
+		</div>
+
+		<div class="col">
+			<h4>MyAccount</h4>
+			<a href="#">About us</a>
+			<a href="#">Delivery information</a>
+			<a href="#">Privacy policy</a>
+			<a href="#">Terms</a>
+			<a href="#">Contact us</a>
+		</div>
+
+		<div class="col install">
+			<h4>Install App</h4>
+			<p>Form App Store or Google Play</p>
+			<div class="row">
+				<img src="img/app.jpg"" alt="">
+				<img src="img/play.jpg"" alt="">
+			</div>
+			<p>Secured  Payment Gateways</p>
+			<img src="img/pay.png" alt="">
+		</div>
+	</footer>
+
+    <script>
+        // Payment Method Selection
+        document.querySelectorAll('.payment-method').forEach(method => {
+            method.addEventListener('click', function() {
+                document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Form Validation
+    
+    </script>
+</body>
+</html>
